@@ -64,7 +64,9 @@ img{
     outline-offset: 3px;
 }
 
+/* button */
 .button{
+    min-width: 260px;
     display: inline-block;
     text-align: center;
     font-style: normal;
@@ -79,7 +81,6 @@ img{
 }
 
 .button-red{
-    width: 260px;
     background-color: var(--site-color);
     color: #fff;
     transition: background-color 0.5s ease;
@@ -88,6 +89,40 @@ img{
 
 .button-red:hover{
     background-color: var(--focus-color);
+
+}
+/* lined link */
+.lined-link{
+    width: 180px;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--site-color);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.6;
+    text-transform: uppercase;
+
+}
+
+.lined-link::before{
+    width: 40px;
+    height: 3px;
+    margin: 0;
+    margin-right: 10px;
+    background-color: var(--site-color);
+    content: "";
+    transition: width 0.3s ease;
+
+}
+
+.lined-link:hover::before{
+    width: 60px;
+
+}
+
+.lined-link:active{
+    opacity: 0.6;
 
 }
 
@@ -99,6 +134,12 @@ img{
     margin-left: auto;
     margin-right: auto;
     
+}
+
+.main{
+    flex-grow: 1;
+    padding-top: 50px;
+
 }
 
 .site-header{
@@ -182,6 +223,7 @@ img{
 }
 
 .search-form-input{
+    width: 170px;
     border: 0;
     padding: 0;
     padding-top: 6px;
@@ -194,55 +236,52 @@ img{
     
 }
 
-
-.main{
-    flex-grow: 1;
-    padding-top: 50px;
-
-}
-
 .section-intro-bg{
+    padding-top: 70px;
     height: 565px;
     background-image: url(../img/intro-bg.jpg);
     background-repeat: no-repeat;
-    background-position: center right;
+    background-position: left calc(50% + 545px) bottom;
     background-size: contain;
     border-bottom: 2px solid #ddd;
 
 }
 
-.section-intro{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    
-}
 
-.intro-wrap{
-    width: 490px;
+.lead-cta-wrap{
+    width: var(--width-height);
+    max-width: 490px;
     display: flex;
     flex-direction: column;
 
 }
 
-.intro-wrap-heading{
+.lead-cta-wrap-heading{
     font-weight: 700;
     font-size: 50px;
     line-height: 1.2;
-    color: #000;
     margin-top: 0;
     margin-bottom: 30px;
 
 }
 
-.intro-wrap-text{
+.intro-wrap-heading{
+    color: #000;
+
+}
+
+.lead-cta-wrap-text{
     margin-top: 0;
     font-weight: 400;
     font-size: 16px;
     margin-bottom: 30px;
-    padding-left: 40px;
+    padding-left: 37px;
+    border-left: 3px solid #777;
+
+}
+
+.intro-wrap-text{
     color: #777;
-    border-left: 3px solid #888;
 
 }
 
@@ -288,7 +327,7 @@ img{
     width: 275px;
     margin-top: 0;
     margin-bottom: 20px;
-    line-height: 160%;
+    line-height: 1.6;
     font-weight: 400;
     color: #333333;
 
@@ -314,34 +353,68 @@ img{
 
 }
 
-.learn-more-link{
-    width: 180px;
+.site-promo{
+    display: flex;
+    align-items: center;    
+    padding: 70px 0;
+
+}
+
+.promo-wrap{
+    margin-right: 110px;
+
+}
+
+.promo-wrap-text{
+    color: #777;
+
+}
+
+.promo-img{
+    display: block;
+    width: 400px;
+    height: 600px;
+    object-fit: cover;
+
+}
+
+.runners{
     display: flex;
     align-items: center;
-    text-decoration: none;
-    color: var(--site-color);
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 160%;
-    text-transform: uppercase;
+    width: 1350px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 240px 0;
+    background-image: url(../img/runners.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
 
 }
 
-.learn-more-link:hover{
-    opacity: 0.8;
+.runners-wrap{
+    margin-left: auto;
+    color: #fff;
 
 }
 
-.learn-more-link:active{
-    opacity: 0.6;
+.runners-wrap-text{
+    border-color:#fff;
 
 }
 
-.learn-more-line{
-    margin: 0;
-    margin-right: 10px;
-    width: 60px;
-    height: 3px;
-    background-color: var(--site-color);
 
+
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) { 
+
+    .section-intro-bg{
+        background-image: url(../img/intro-bg@2x.jpg);
+    }
 }
